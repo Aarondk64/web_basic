@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<title>Hangman</title>    
+</head>
+<h1>Hangman</h1>
+<style>
+body{
+    background-color: powderblue;
+    font-family: arial;
+    font-size:xx-large;
+    text-align: center
+
+    }
+</style>
+
+<p id="demo">
+
+    <script>
+    
+   
+    document.getElementById("demo").innerHTML = Math.random();
+
+    const wordlist[Apfel, Wasserfall, Kaktus, Regenschirm, Baum, Wolke, Schmetterling, Taschenlampe, Musik, Fahrrad, Sternenhimmel, Katze, Glühbirne, Mütze, Sand, Uhr, Pilz, Koffer, Kaffee, Mond, Tisch, Lampe, Flugzeug, Fenster, Wasser, Zug, Apfelsine, Eis, Schlüssel, Blume, Berg, Auto, Tasse, Schuh, Papier, Musiknote, Licht, Brücke, Himmel, Planet, Socke, Gitarre, Pizza, Telefon, Brille, Kerze, Schrank, Stuhl, Regal, Lächeln, Herz, Teich, Segelboot, Schlüsselbund, Ofen, Tuch, Uhrzeit, Pinsel, Dschungel, Katze, Hund, Stein, Schokolade, Torte, Schaufel, Stern, Fisch, Kochtopf, Löffel, Flasche, Zelt, Gläser, Keks, Gänseblümchen, Pfad, Rucksack, Schnecke, Mütze, Torte, Fernseher, Teppich, Schlüsselkarte, Zaun, Wolke, Felsen, Blätter, Spiegel, Ball, Hase, Handschuh, Biene, Riegel, Rakete, Mütze, Tintenfisch, Wiese, Regenbogen, Fische, Zahn, Laterne.]
+
+     const word = wordList[Math.floor(Math.random() * wordList.length)];
+        const wordLength = word.length;
+        
+        let guessedWord = Array(wordLength).fill("_"); // Platzhalter für das erratene Wort
+        let attemptsLeft = 6; // Maximale Versuche
+        let guessedLetters = []; // Bereits geratene Buchstaben
+
+        // Anzeigen des aktuellen Wortes
+        document.getElementById("word").textContent = guessedWord.join(" ");
+
+        // Funktion, um den Buchstaben zu überprüfen
+        function makeGuess() {
+            const guessInput = document.getElementById("guess-input");
+            const guess = guessInput.value.toLowerCase();
+
+            // Eingabe überprüfen
+            if (guess.length !== 1 || !/[a-z]/.test(guess)) {
+                alert("Bitte gib nur einen einzelnen Buchstaben ein.");
+                guessInput.value = "";
+                return;
+            }
+
+            // Überprüfen, ob der Buchstabe bereits geraten wurde
+            if (guessedLetters.includes(guess)) {
+                alert("Du hast diesen Buchstaben bereits geraten.");
+                guessInput.value = "";
+                return;
+            }
+
+            // Den Buchstaben zu den geratenen Buchstaben hinzufügen
+            guessedLetters.push(guess);
+
+            // Überprüfen, ob der Buchstabe im Wort ist
+            if (word.includes(guess)) {
+                // Buchstaben im Wort aktualisieren
+                for (let i = 0; i < wordLength; i++) {
+                    if (word[i] === guess) {
+                        guessedWord[i] = guess;
+                    }
+                }
+
+                // Aktualisiere die Anzeige des Wortes
+                document.getElementById("word").textContent = guessedWord.join(" ");
+
+                // Überprüfen, ob das Wort erraten wurde
+                if (!guessedWord.includes("_")) {
+                    document.getElementById("message").textContent = "Herzlichen Glückwunsch! Du hast das Wort erraten!";
+                    document.getElementById("guess-input").disabled = true;
+                }
+            } else {
+                // Fehler: Versuche reduzieren
+                attemptsLeft--;
+                document.getElementById("attempts").textContent = `Verbleibende Versuche: ${attemptsLeft}`;
+
+                // Überprüfen, ob der Spieler verloren hat
+                if (attemptsLeft === 0) {
+                    document.getElementById("message").textContent = `Du hast verloren! Das Wort war: ${word}`;
+                    document.getElementById("guess-input").disabled = true;
+                }
+            }
+
+            // Eingabefeld zurücksetzen
+            guessInput.value = "";
+            guessInput.focus();
+
+
+
+
+
+
+
+
+    </script>
+</p>
+
+
+<h1>Hangman Spiel</h1>
+    <div id="word">_ _ _ _ _</div>
+    <div id="attempts">Verbleibende Versuche: 6</div>
+    <input type="text" id="guess-input" maxlength="1" placeholder="Rate einen Buchstaben" />
+    <button onclick="makeGuess()">Rate!</button>
+    <div id="message"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
