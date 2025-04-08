@@ -1,0 +1,161 @@
+<!DOCTYPE html<html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<style>
+    .heading {
+        border: 2px solid black;
+        background-color:lightskyblue;
+        font-family:  sans-serif;
+    }
+
+    .heading2{
+        font-size: 200%;
+        border: 2px solid black;
+        background-color: lightskyblue;
+        font-family: sans-serif;
+        text-align: left;
+
+    }  
+
+    a:link, a:visited {
+        background-color: lightskyblue;
+        color: black;
+        padding: 20px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: 2px dotted black
+    }
+
+    a:hover, a:active {
+        background-color: lightskyblue;
+    }   
+
+</style>
+
+
+
+<h1 class="heading">Praktikum bei Flender</h1>
+
+<button type="button" onclick="document.getElementById(&#39;demo&#39;).innerHTML = Date(31.03-11.042025)">
+Klicke um für Zeit und Datum.</button>
+
+<p id="demo">Mon Apr 07 2025 15:00:41 GMT+0200 (Mitteleuropäische Sommerzeit)</p>
+
+<p>als Fachinformatiker für Anwendungsentwicklung</p>
+
+Ich bin in meiner zweiten Praktikumswoche bei Flender und lerne zu Programmieren.  Ich erstelle gerade eine Website und ich hoffe ich lerne etwas neues.
+<p>Das ist das Logo von Flender.</p>
+<img src="./index_files/Flender.jpg" alt="Kein Bild" width="543" height="161">
+<p>das stellen sie her</p>
+<img src="./index_files/Getriebe.jpg" alt="Kein Bild" width="500" height="500">
+
+
+<hr>
+<h2 class="heading2">Standorte von Flender in Deutschland</h2>
+
+
+
+<ul>
+    <li>Bocholt</li>
+    <li>Mussum</li>
+    <li>Voerde</li>
+    <li>Wesel</li>
+    <li>Penig</li>
+</ul>
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<hr>
+<h2 class="heading2">Kunden von Flender</h2>
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+
+<table style="width:50%;">
+    <tbody><tr>
+        <th>Firma</th>
+        <th>Standort</th>
+        <th>Branche</th>
+    </tr>
+    <tr>
+        <td>Siemens Gamesa</td>
+        <td>Zamudio, Spanien</td>
+        <td>Windenergie</td>
+    </tr>
+    <tr>
+        <td>LafargeHolcim</td>
+        <td>Zürich, Schweiz</td>
+        <td>Zementindustrie</td>
+    </tr>
+    <tr>
+        <td>Rio Tinto</td>
+        <td>London, Großbritannien</td>
+        <td>Bergbau</td>
+    </tr>
+    <tr>
+        <td>Maersk</td>
+        <td>Kopenhagen, Dänemark</td>
+        <td>Schifffahrt</td>
+    </tr>
+    <tr>
+        <td>TyssenKrupp</td>
+        <td>Essen, Deutschland</td>
+        <td>Stahlindustrie</td>
+    </tr>
+    <tr>
+        <td>BASF</td>
+        <td>Ludwigshafen, Deutschland</td>
+        <td>Chemieindustrie</td>
+    </tr>
+</tbody></table>
+
+<hr>
+<h1 class="heading2">Flender homepage</h1>
+
+<p><a href="https://www.flender.com/de/">Klicke hier</a></p>
+
+
+
+</body></html>
