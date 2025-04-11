@@ -1,5 +1,6 @@
 function myFunction() {
-    document.getElementById("demo").innerHTML = Date(31.03 - 11.042025)
-    
+    document.getElementById("demo").innerHTML = new Date().toLocaleTimeString();
+
+    console.log("Hello, World!");
 }
 
